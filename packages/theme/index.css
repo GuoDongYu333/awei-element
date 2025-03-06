@@ -1,1 +1,67 @@
-@import "./reset.css"
+@import "./reset.css";
+
+:root {
+    /* colors */
+    --ez-color-white: #ffffff;
+    --ez-color-black: #000000;
+    --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+    --ez-bg-color: #ffffff;
+    --ez-bg-color-page: #f2f3f5;
+    --ez-bg-color-overlay: #ffffff;
+    --ez-text-color-primary: #303133;
+    --ez-text-color-regular: #606266;
+    --ez-text-color-secondary: #909399;
+    --ez-text-color-placeholder: #a8abb2;
+    --ez-text-color-disabled: #c0c4cc;
+    --ez-border-color: #dcdfe6;
+    --ez-border-color-light: #e4e7ed;
+    --ez-border-color-lighter: #ebeef5;
+    --ez-border-color-extra-light: #f2f6fc;
+    --ez-border-color-dark: #d4d7de;
+    --ez-border-color-darker: #cdd0d6;
+    --ez-fill-color: #f0f2f5;
+    --ez-fill-color-light: #f5f7fa;
+    --ez-fill-color-lighter: #fafafa;
+    --ez-fill-color-extra-light: #fafcff;
+    --ez-fill-color-dark: #ebedf0;
+    --ez-fill-color-darker: #e6e8eb;
+    --ez-fill-color-blank: #ffffff;
+    
+    @each $val, $color in var(--colors) {
+      --ez-color-$(val): $(color);
+      @for $i from 3 to 9 {
+        --ez-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+      }
+      --ez-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    }
+  
+    /* border */
+    --ez-border-width: 1px;
+    --ez-border-style: solid;
+    --ez-border-color-hover: var(--ez-text-color-disabled);
+    --ez-border: var(--ez-border-width) var(--ez-border-style) var(--ez-border-color);
+    --ez-border-radius-base: 4px;
+    --ez-border-radius-small: 2px;
+    --ez-border-radius-round: 20px;
+    --ez-border-radius-circle: 100%;
+  
+    /*font*/
+    --ez-font-size-extra-large: 20px;
+    --ez-font-size-large: 18px;
+    --ez-font-size-medium: 16px;
+    --ez-font-size-base: 14px;
+    --ez-font-size-small: 13px;
+    --ez-font-size-extra-small: 12px;
+    --ez-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+      'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+    --ez-font-weight-primary: 500;
+  
+    /*disabled*/
+    --ez-disabled-bg-color: var(--ez-fill-color-light);
+    --ez-disabled-text-color: var(--ez-text-color-placeholder);
+    --ez-disabled-border-color: var(--ez-border-color-light);
+  
+    /*animation*/
+    --ez-transition-duration: 0.4s;
+    --ez-transition-duration-fast: 0.2s;
+  }

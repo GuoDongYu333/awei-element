@@ -8,7 +8,7 @@
     "docs:dev": "pnpm --filter @font-end-ui/docs dev",
     "docs:build": "pnpm --filter @font-end-ui/docs build",
     "docs:preview": "pnpm --filter @font-end-ui/docs preview",
-    "test": "echo todo"
+    "test": "pnpm --filter @font-end-ui/components test"
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,4 @@
-import type { Component } from "vue";
+import type { Component, Ref } from "vue";
 
 export type ButtonType =
   | "primary"
@@ -20,8 +20,31 @@ export interface ButtonProps {
   disabled?: boolean;
   loading?: boolean;
   icon?: string;
+  loadingIcon?: string;
   round?: boolean;
   circle?: boolean;
   plain?: boolean;
-  autoFocus?: boolean;
+  autofocus?: boolean;
+  useThrottle?: boolean;
+  throttleDuration?: number;
+}
+
+export interface ButtonGroupProps {
+  size?: ButtonSize;
+  type?: ButtonType;
+  disabled?: boolean;
+}
+
+export interface ButtonGroupContext {
+  size?: ButtonSize;
+  type?: ButtonType;
+  disabled?: boolean;
+}
+
+export interface ButtonEmits {
+  (e: "click", val: MouseEvent): void;
+}
+
+export interface ButtonInStance {
+  ref: Ref<HTMLButtonElement | void>;
 }
